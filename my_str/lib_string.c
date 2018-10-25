@@ -7,7 +7,7 @@
 
 int my_str_pushback(my_str_t* str, char c);
 
-void my_str_clear(my_str_t* str);
+// void my_str_clear(my_str_t* str);
 
 // length of c string
 int len_cstr(const char* cstr){
@@ -29,7 +29,11 @@ int len_cstr(const char* cstr){
 //! обов'язково зрозуміють неправильно. Розказавши 20-30 раз, вирішив
 //! записати. Тепер очікую збільшення кількості скарг на довжину опису...)
 int my_str_create(my_str_t* str, size_t buf_size){
-    str->data = malloc((buf_size + 1) * sizeof(char));
+    // check str pointer
+    if (!str){      
+        return -1;
+    }
+    str->data = malloc(buf_size + 1);
     if (str->data != NULL){
         str->capacity_m = buf_size;
         str->size_m = 0;
@@ -65,10 +69,9 @@ int my_str_from_cstr(my_str_t* str, const char* cstr, size_t buf_size){
 //! Звільняє пам'ять, знищуючи стрічку.
 //! Аналог деструктора інших мов.
 void my_str_free(my_str_t* str){
-    for (int i = 0; i < str->size_m; i++){
-        str->data[i] = '\0';
-    }
-    my_str_clear(str);
+    free(str->data);
+    str->size_m = 0;
+    str->capacity_m = 0;
 }
 
 //! Повертає розмір стрічки:
@@ -110,9 +113,9 @@ int my_str_putc(my_str_t* str, size_t index, char c){
 //! Повертає 0, якщо успішно, -1, якщо буфер закінчився.
 int my_str_pushback(my_str_t* str, char c){
     if (str->size_m < str->capacity_m){
-        str->data[str->size_m] = c;
-        str->size_m++;
+        str->data[str->size_m-1] = c;
         str->data[str->size_m] = '\0';
+        str->size_m++;
         return 0;
     }
     return -1;
@@ -122,9 +125,8 @@ int my_str_pushback(my_str_t* str, char c){
 //! Повертає його, якщо успішно, -1, якщо буфер закінчився.
 int my_str_popback(my_str_t* str){
     if (str->size_m > 0){
-        str->data[str->size_m] = '\0';
+        char c = str->data[str->size_m - 1];
         str->size_m--;
-        char c = str->data[str->size_m];
         str->data[str->size_m] = '\0';
         return c;
     }
