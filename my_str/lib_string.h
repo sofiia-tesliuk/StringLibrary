@@ -15,7 +15,7 @@ typedef struct my_str_t
     char* data;
 } my_str_t;
 
-int len_cstr(const char* cstr);
+size_t len_cstr(const char* cstr);
 
 int my_str_create(my_str_t* str, size_t buf_size);
 
