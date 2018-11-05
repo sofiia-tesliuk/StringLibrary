@@ -1,6 +1,9 @@
 #include "my_str/lib_string.h"
 #include <stdio.h>
 
+int lambda(char c){
+    return c > 'k';
+}
 
 int main(int argc, char* argv[]){
     // C-string example
@@ -50,11 +53,33 @@ int main(int argc, char* argv[]){
     printf("After: %s\n\n", str_1.data);
 
     printf("Before:\n\tstr: %s\n\tAppend str: %s\n\tmy_str_append_cstr\n", str_1.data, inst_str);
-    my_str_append(&str_1, inst_str);
+    my_str_append_cstr(&str_1, inst_str);
     printf("After: %s\n\n", str_1.data);
 
+    printf("Compare:\n\tstr_1: %s\n\tstr_2: %s\n\tmy_str_cmp: %d\n\n", str_1.data, example_str, my_str_cmp(&str_1, example_str));
+    my_str_from_cstr(&str_1, example_str, 20);
+    printf("Compare:\n\tstr_1: %s\n\tstr_2: %s\n\tmy_str_cmp: %d\n\n", str_1.data, example_str, my_str_cmp(&str_1, example_str));
+    printf("Compare:\n\tstr_1: %s\n\tstr_2: %s\n\tmy_str_cmp: %d\n\n", str_1.data, inst_str, my_str_cmp(&str_1, inst_str));
 
+    printf("Before:\n\tfrom: %s\n\tto: %s\n\tmy_str_substr\n", str_1.data, str_2.data);
+    my_str_substr(&str_1, &str_2, 1, 4);
+    printf("After: \n\t to: %s\n\n", str_2.data);
 
+    printf("Before:\n\tfrom: %s\n\tto: %s\n\tmy_str_substr\n", str_1.data, inst_str);
+    my_str_substr_cstr(&str_1, inst_str, 1, 4);
+    printf("After: \n\t to: %s\n\n", inst_str);
+
+    printf("Find:\n\tstr: %s\n\tsub_str: %s\n\tfrom: %d\n\tmy_str_find: %zu\n\n", str_1.data, str_2.data, 0, my_str_find(&str_1, &str_2, 0));
+    printf("Find:\n\tstr: %s\n\tchar: %c\n\tfrom: %d\n\tmy_str_find: %zu\n\n", str_1.data, 't', 0, my_str_find_c(&str_1, 't', 0));
+
+    printf("Find:\n\tstr: %s\n\tpredicat: if char > 'k'\n\tmy_str_find_if: %c\n\n", str_1.data, my_str_find_if(&str_1, &lambda));
+
+    printf("Before:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\tmy_str_free\n", str_2.data, str_2.size_m, str_2.capacity_m);
+    my_str_free(&str_2);
+    printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_2.data, str_2.size_m, str_2.capacity_m);
+
+//    FILE *fp = fopen('example.txt', 'r');
+//    printf("Read file: example. my_str_read_file: %d", my_str_read_file(&str_1, fp));
 
     return 0;
 }

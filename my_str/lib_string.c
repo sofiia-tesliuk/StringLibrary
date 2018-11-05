@@ -69,7 +69,7 @@ int my_str_from_cstr(my_str_t* str, const char* cstr, size_t buf_size){
 //! Звільняє пам'ять, знищуючи стрічку.
 //! Аналог деструктора інших мов.
 void my_str_free(my_str_t* str){
-    free(str->data);
+    str->data = NULL;
     str->size_m = 0;
     str->capacity_m = 0;
 }
@@ -212,7 +212,7 @@ int my_str_insert_cstr(my_str_t* str, const char* from, size_t pos){
 //! Якщо це неможливо, повертає -1, інакше 0.
 int my_str_append(my_str_t* str, const my_str_t* from){
     if (str->capacity_m >= str->size_m + from->size_m){
-        my_str_append(str, from->data);
+        my_str_append_cstr(str, from->data);
         return 0;
     }
     return -1;
@@ -221,10 +221,8 @@ int my_str_append(my_str_t* str, const my_str_t* from){
 //! Додати С-стрічку в кінець.
 //! Якщо це неможливо, повертає -1, інакше 0.
 int my_str_append_cstr(my_str_t* str, const char* from){
-    my_str_t* from_str;
-    size_t len_from = len_cstr(from);
-    if (str->capacity_m >= str->size_m + len_from){
-        for (int i = 0; i < len_from; i++){
+    if (str->capacity_m >= str->size_m + len_cstr(from)){
+        for (int i = 0; i < len_cstr(from); i++){
             my_str_pushback(str, from[i]);
         }
         return 0;
@@ -285,6 +283,7 @@ int my_str_substr_cstr(const my_str_t* str, char* to, size_t beg, size_t end){
         c = my_str_getc(str, i + beg);
         to[i] = c;
     }
+    to[end - beg] = '\0';
     return 0;
 }
 
@@ -300,18 +299,18 @@ const char* my_str_get_cstr(my_str_t* str){
 //! початку або -1u, якщо не знайдено. from -- місце, з якого починати шукати.
 //! Якщо більше за розмір -- вважати, що не знайдено.
 size_t my_str_find(const my_str_t* str, const my_str_t* tofind, size_t from){
-    int j = 0;
+    size_t j = 0;
     for (size_t i = from; i < str->size_m; i++){
         if (my_str_getc(str, i) == my_str_getc(tofind, j)){
             j++;
-            if (j > tofind->size_m){
+            if (j >= tofind->size_m){
                 return i - tofind->size_m + 1;
             }
         } else{
             j = 0;
         }
     }
-    return -1;
+    return -1u;
 }
 
 //! Знайти перший символ в стрічці, повернути його номер
@@ -323,24 +322,33 @@ size_t my_str_find_c(const my_str_t* str, char tofind, size_t from){
             return i;
         }
     }
-    return -1;
+    return -1u;
 }
 
-//TODO
 //! Знайти символ в стрічці, для якого передана
 //! функція повернула true, повернути його номер
 //! або -1u, якщо не знайдено:
-size_t my_str_find_if(const my_str_t* str, int (*predicat)(char));
+size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
+    char c;
+    for (size_t i = 0; i < str->size_m; i++){
+        c = my_str_getc(str, i);
+        if (predicat(c)){
+            return c;
+        }
+    }
+    return -1u;
+}
 
+//TODO
 //! Прочитати стрічку із файлу. Повернути, 0, якщо успішно, -1,
 //! якщо сталися помилки. Кінець вводу -- не помилка, однак,
 //! слід не давати читанню вийти за межі буфера!
 //! Рекомендую скористатися fgets().
 int my_str_read_file(my_str_t* str, FILE* file){
    if (file != NULL){
-       fgets(str->data, (int) str->capacity_m, file);
-       fclose (file);
-       return 0;
+       if (fgets(str->data, (int)str->capacity_m, file) != NULL){
+            return 0;
+       }
    }
     return -1;
 }
