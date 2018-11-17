@@ -78,7 +78,8 @@ int main(int argc, char* argv[]){
     my_str_free(&str_2);
     printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_2.data, str_2.size_m, str_2.capacity_m);
 
-//    FILE *fp = fopen('example.txt', 'r');
+//    FILE *fp;
+//    fp = fopen('example.txt', 'r');
 //    printf("Read file: example. my_str_read_file: %d", my_str_read_file(&str_1, fp));
 
     return 0;
