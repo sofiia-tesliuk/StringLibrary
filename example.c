@@ -11,7 +11,7 @@ int main(int argc, char* argv[]){
     // C-string example
     char example_str[] = {'k', 'i', 't',  't',  'y', '\0'};
     my_str_t str_1;
-    my_str_create(&str_1, 10);
+    my_str_create(&str_1, 100);
 //    my_str_from_cstr(&str_1, example_str, 30);
 //    printf("Example: %s\n\n", str_1.data);
 //    printf("my_str_size: %zu\n\n", my_str_size(&str_1));
@@ -83,7 +83,7 @@ int main(int argc, char* argv[]){
     FILE *fp;
     fp = fopen("/home/anastasiia/CLionProjects/StringLibrary/in_file.txt", "r");
 
-    printf("\n\nRead file: example. my_str_read_file: %d", my_str_read_file(&str_1, fp));
+    printf("\n\nRead file: example. my_str_read_file: %d\n", my_str_read_file(&str_1, fp));
     printf("%s\n", str_1.data);
     printf("%d\n", (int) str_1.capacity_m);
     return 0;

@@ -323,14 +323,13 @@ size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
 
 
 
-
+// read file into my_str | return 0 if OK -- else (-1) if wrong path to the file or in case of buffer overflow
 int my_str_read_file(my_str_t* str, FILE* file){
-    if (file == NULL) {
-        return -1;
-    } else {
-        fgets(str->data, (int) str->capacity_m, file);
+    if (file != NULL) {
+        fgets(str->data, str->capacity_m, file);
+        fclose(file);
         return 0;
-    }
+    } else { return -1; }
 }
 
 
