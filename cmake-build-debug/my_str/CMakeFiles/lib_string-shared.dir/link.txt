@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -g  -shared -Wl,-soname,liblib_string.so -o liblib_string.so CMakeFiles/lib_string-shared.dir/lib_string.c.o 

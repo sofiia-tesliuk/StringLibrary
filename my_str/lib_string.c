@@ -1,40 +1,16 @@
 /*
  * lib_string.c
  */
-
 #include "lib_string.h"
 
 
-int my_str_pushback(my_str_t* str, char c);
-
-// void my_str_clear(my_str_t* str);
-
-// length of c string
-size_t len_cstr(const char* cstr){
-    size_t length = 0;
-    while (cstr[length] != '\0'){
-        length++;
-    }
-    return length;
-}
-
-//! Створити стрічку із буфером вказаного розміру. Пам'ять виділяється динамічно.
-//! Варто виділяти buf_size+1 для спрощення роботи my_str_get_cstr().
-//! УВАГА! Ця функція -- аналог конструктора інших мов.
-//! Всі решта функцій можуть вважати, що їм не буде передано жодної змінної,
-//! до якої не застосували рівно один раз цю функцію.
-//! Тобто, до того, як викликати будь-яку іншу функцію, до змінної типу
-//! my_str_t слід рівно один раз за час її існування викликати  my_str_create().
-//! (З біллю в серці згадуються закони Мерфі -- кожне твердження
-//! обов'язково зрозуміють неправильно. Розказавши 20-30 раз, вирішив
-//! записати. Тепер очікую збільшення кількості скарг на довжину опису...)
+// my_str constructor
 int my_str_create(my_str_t* str, size_t buf_size){
-    // check str pointer
-    if (!str){      
+    if (!str){                                                                               // check str pointer
         return -1;
     }
     str->data = malloc(buf_size + 1);
-    if (str->data != NULL){
+    if (str->data != NULL){                                                                  // check if malloc worked
         str->capacity_m = buf_size;
         str->size_m = 0;
         str->data[0] = '\0';
@@ -43,54 +19,65 @@ int my_str_create(my_str_t* str, size_t buf_size){
     return -1;
 }
 
-//! Створити стрічку із буфером вказаного розміру із переданої С-стрічки.
-//! Якщо розмір -- 0, виділяє блок, рівний розміру С-стрічки, якщо
-//! менший за її розмір -- вважати помилкою.
-//! Пам'ять виділяється динамічно.
-//! 0 -- якщо все ОК, -1 -- недостатній розмір буфера, -2 -- не вдалося виділити пам'ять
-int my_str_from_cstr(my_str_t* str, const char* cstr, size_t buf_size){
-    size_t capacity;
-    if (buf_size == 0){
-        capacity = len_cstr(cstr);
-    } else if (buf_size < len_cstr(cstr)){
-        return -1;
-    } else {
-        capacity = buf_size;
-    }
-    int success = my_str_create(str, capacity);
-    if (success == 0){
-        for (int i = 0; i < len_cstr(cstr); i++){
-            my_str_pushback(str, cstr[i]);
-        }
-    }
-    return -2;
-}
 
-//! Звільняє пам'ять, знищуючи стрічку.
-//! Аналог деструктора інших мов.
+// my_str destructor
 void my_str_free(my_str_t* str){
     str->data = NULL;
     str->size_m = 0;
     str->capacity_m = 0;
 }
 
-//! Повертає розмір стрічки:
-size_t my_str_size(const my_str_t* str){
+
+// get size of c string
+size_t cstr_get_len(const char *cstr){
+    size_t length = 0;
+    while (cstr[length] != '\0'){
+        length++;
+    }
+    return length;
+}
+
+
+// cstr --> my_str |  return -- 0 if OK -- (-1) if buf_size too small-- (-2) if malloc error
+int my_str_from_cstr(my_str_t* str, const char* cstr, size_t buf_size){
+    size_t capacity;
+    if (buf_size == 0){
+        capacity = cstr_get_len(cstr);
+    } else if (buf_size < cstr_get_len(cstr)){
+        return -1;
+    } else { capacity = buf_size; }
+
+    int error = my_str_create(str, capacity);
+    if (!error){
+        for (int i = 0; i < cstr_get_len(cstr); i++){
+            my_str_pushback(str, cstr[i]);
+        }
+        return  0;
+    } else { return -2; }
+}
+
+
+
+
+
+// get size
+size_t my_str_get_len(const my_str_t* str){
     return str->size_m;
 }
 
-//! Повертає розмір буфера:
+
+// get capacity
 size_t my_str_capacity(const my_str_t* str){
     return str->capacity_m;
 }
 
-//! Повертає булеве значення, чи стрічка порожня:
+
+// check if my_str is empty
 int my_str_empty(const my_str_t* str){
     return str->size_m == 0;
 }
 
-//! Повертає символ у вказаній позиції, або -1, якщо вихід за межі стрічки
-//! Тому, власне, int а не char
+// get char by index | return char if OK else -1
 int my_str_getc(const my_str_t* str, size_t index){
     if (index < str->size_m){
         return str->data[index];
@@ -98,106 +85,93 @@ int my_str_getc(const my_str_t* str, size_t index){
     return -1;
 }
 
-//! Записує символ у вказану позиції (заміняючи той, що там був),
-//! Повертає 0, якщо позиція в межах стрічки,
-//! Поветає -1, не змінюючи її вмісту, якщо ні.
+
+// set char by index | return 0 if OK else -1
 int my_str_putc(my_str_t* str, size_t index, char c){
     if (index < str->size_m){
         str->data[index] = c;
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Додає символ в кінець.
-//! Повертає 0, якщо успішно, -1, якщо буфер закінчився.
+
+// append char | return 0 if OK else -1
 int my_str_pushback(my_str_t* str, char c){
-    if (str->size_m < str->capacity_m){
+    if (str->size_m < str->capacity_m) {
         str->data[str->size_m] = c;
         str->size_m++;
         str->data[str->size_m] = '\0';
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Викидає символ з кінця.
-//! Повертає його, якщо успішно, -1, якщо буфер закінчився.
+
+// pop char | return 0 if OK else -1
 int my_str_popback(my_str_t* str){
     if (str->size_m > 0){
         char c = str->data[str->size_m - 1];
         str->size_m--;
         str->data[str->size_m] = '\0';
         return c;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Копіює стрічку. Якщо reserve == true,
-//! то із тим же розміром буферу, що й вихідна,
-//! інакше -- із буфером мінімального достатнього розміру.
-//! Старий вміст стрічки перед тим звільняє, за потреби.
+// copy my_str | if reserve == true and 'from' fits into 'to', to-capacity is kept -- else adjusted.
 int my_str_copy(const my_str_t* from,  my_str_t* to, int reserve){
-    if (!reserve){
-        my_str_create(to, from->size_m);
+    if ((!reserve) || (from->size_m > to->capacity_m)) {
+        to->capacity_m = my_str_get_len(from) + 1;
     }
-    if(from->size_m > to->capacity_m){
-        return -1;
+    if (to->data){
+        my_str_clear(to);
     }
-    my_str_clear(to);
-    char c;
     for (int i = 0; i < from->size_m; i++){
-        c = my_str_getc(from, i);
-        my_str_pushback(to, c);
+        my_str_pushback(to, from->data[i]);
     }
     return 0;
 }
 
-//! Очищає стрічку -- робить її порожньою. Складність має бути О(1).
-//! Уточнення (чомусь ця ф-ція викликала багато непорозумінь):
-//! стрічка продовжує існувати, буфер той самий, того ж розміру, що був,
-//! лише містить 0 символів -- size_m = 0.
+
+
+// free content of my_str
 void my_str_clear(my_str_t* str){
     str->data[0] = '\0';
     str->size_m = 0;
 }
 
-//! Вставити символ у стрічку в заданій позиції, змістивши решту символів праворуч.
-//! Якщо це неможливо, повертає -1, інакше 0.
+
+// shift-insert char by index | return 0 if OK else (-1) if capacity overflow
 int my_str_insert_c(my_str_t* str, char c, size_t pos){
     if (str->size_m < str->capacity_m){
         char shift_c;
-        for (int i = pos; i < str->size_m; i++){
-            shift_c = my_str_getc(str, i);
-            my_str_putc(str, i, c);
+        for (size_t i = pos; i < str->size_m; i++){
+            shift_c = str->data[i];
+            str->data[i] = c;
             c = shift_c;
         }
         my_str_pushback(str, c);
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Вставити стрічку в заданій позиції, змістивши решту символів праворуч.
-//! Якщо це неможливо, повертає -1, інакше 0.
+
+// shift-insert another my_str by index | return 0 if OK else (-1) for capacity overflow
 int my_str_insert(my_str_t* str, const my_str_t* from, size_t pos){
     if (str->capacity_m >= str->size_m + from->size_m){
         my_str_insert_cstr(str, from->data, pos);
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Вставити C-стрічку в заданій позиції, змістивши решту символів праворуч.
-//! Якщо це неможливо, повертає -1, інакше 0.
+
+// shift-insert cstr by index | return 0 if OK else (-1) if capacity overflow
 int my_str_insert_cstr(my_str_t* str, const char* from, size_t pos){
-    size_t len_from = len_cstr(from);
+    size_t len_from = cstr_get_len(from);
     if (str->capacity_m >= str->size_m + len_from){
-        str->size_m += len_cstr(from);
+        str->size_m += cstr_get_len(from);
         str->data[str->size_m] = '\0';
         char c;
         for (size_t i = str->size_m - 1; i >= pos + len_from; i--){
-            c = my_str_getc(str, i - len_from);
+            c = str->data[i - len_from];
             my_str_putc(str, i, c);
         }
         for (size_t i = pos; i < pos + len_from; i++){
@@ -208,40 +182,36 @@ int my_str_insert_cstr(my_str_t* str, const char* from, size_t pos){
     return -1;
 }
 
-//! Додати стрічку в кінець.
-//! Якщо це неможливо, повертає -1, інакше 0.
+
+// append my_str | return 0 if OK else (-1) for capacity overflow
 int my_str_append(my_str_t* str, const my_str_t* from){
     if (str->capacity_m >= str->size_m + from->size_m){
         my_str_append_cstr(str, from->data);
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Додати С-стрічку в кінець.
-//! Якщо це неможливо, повертає -1, інакше 0.
+
+// append cstr | return 0 if OK else (-1) for capacity overflow
 int my_str_append_cstr(my_str_t* str, const char* from){
-    if (str->capacity_m >= str->size_m + len_cstr(from)){
-        for (int i = 0; i < len_cstr(from); i++){
+    if (str->capacity_m >= str->size_m + cstr_get_len(from)){
+        for (int i = 0; i < cstr_get_len(from); i++){
             my_str_pushback(str, from[i]);
         }
         return 0;
-    }
-    return -1;
+    } else { return -1; }
 }
 
-//! Порівняти стрічки, повернути 0, якщо рівні (за вмістом!)
-//! -1 (або інше від'ємне значення), якщо перша менша,
-//! 1 (або інше додатне значення) -- якщо друга.
-//! Поведінка має бути такою ж, як в strcmp.
+
+// compare my_str and cstr (by content) | return 0 if equal -- else (-1) if 1st < 2nd -- else 1
 int my_str_cmp(my_str_t* str, const char* from){
-    if (str->size_m < len_cstr(from)){
+    if (str->size_m < cstr_get_len(from)){
         return -1;
-    } else if(str->size_m > len_cstr(from)){
+    } else if (str->size_m > cstr_get_len(from)){
         return 1;
     } else{
         for (int i = 0; i < str->size_m; i++){
-            if (my_str_getc(str, i) != from[i]){
+            if (str->data[i] != from[i]){
                 return 2;
             }
         }
@@ -249,55 +219,59 @@ int my_str_cmp(my_str_t* str, const char* from){
     }
 }
 
-//! Скопіювати підстрічку, із beg включно, по end не включно ([beg, end)).
-//! Якщо end виходить за межі str -- скопіювати скільки вдасться, не вважати
-//! це помилкою. Якщо ж в ціловій стрічці замало місця, або beg більший
-//! за розмір str -- це помилка. Повернути відповідний код завершення.
+// copy my_str [beg, end)  |  return 0 if OK -- else (-1) for wrong slice indices -- else (-2) for to-capacity overflow
 int my_str_substr(const my_str_t* str, my_str_t* to, size_t beg, size_t end){
-    if ((to->capacity_m < end - beg) || (beg >= str->size_m )){
+    if ((beg > end) || (beg >= str->size_m)){
         return -1;
     }
-    my_str_clear(to);
-    char c;
-    if (end > str->size_m){
+    if (to->capacity_m < end - beg) {
+        return -2;
+    }
+    if (end > str->size_m){                // if slice's end is beyond --> copy as much as possible
         end = str->size_m;
     }
-    for (int i = beg; i < end; i++){
-        c = my_str_getc(str, i);
-        my_str_pushback(to, c);
+    my_str_t str_slice;
+    my_str_create(&str_slice, end - beg);
+    for (size_t i = beg; i < end; i++){
+        str_slice.data[i] = str->data[i];
     }
+    my_str_clear(to);
+    my_str_copy(&str_slice, to, 1);
+    to->data[end] = '\0';
+
     return 0;
 }
 
-//! Її C-string варіант. Враховуючи пізні зміни інтерфейсу, прийнятним
-//! Буде і попередній варіант.
+
+// copy my_str [beg, end) into cstr | return 0 for OK -- (-1) for wrong slice indices -- (-2) for cstr overflow
 int my_str_substr_cstr(const my_str_t* str, char* to, size_t beg, size_t end){
-    if ((len_cstr(to) < end - beg) || (beg >= str->size_m )){
+    if ((beg > end) || (beg >= str->size_m)){
         return -1;
     }
-    char c;
-    if (end > str->size_m){
+    if (cstr_get_len(to) < end - beg) {
+        return -2;
+    }
+    if (end > str->size_m){                // if slice's end is beyond --> copy as much as possible
         end = str->size_m;
     }
-    for (int i = 0; i < end - beg; i++){
-        c = my_str_getc(str, i + beg);
+
+    char c;
+    for (size_t i = 0; i < end - beg; i++){
+        c = str->data[i + beg];
         to[i] = c;
     }
     to[end - beg] = '\0';
     return 0;
 }
 
-//! Повернути вказівник на С-стрічку, еквівалентну str.
-//! Вважатимемо, що змінювати цю С-стрічку заборонено.
-//! Якщо в буфері було зарезервовано на байт більше за макс. розмір, можна
-//! просто додати нульовий символ в кінці та повернути вказівник data.
+
+// return cstr similar to my_str
 const char* my_str_get_cstr(my_str_t* str){
     return str->data;
 }
 
-//! Знайти першу підстрічку в стрічці, повернути номер її
-//! початку або -1u, якщо не знайдено. from -- місце, з якого починати шукати.
-//! Якщо більше за розмір -- вважати, що не знайдено.
+
+// find the 1st occurrence of a substring | return it's index if found -- else return -1u
 size_t my_str_find(const my_str_t* str, const my_str_t* tofind, size_t from){
     size_t j = 0;
     for (size_t i = from; i < str->size_m; i++){
@@ -310,33 +284,30 @@ size_t my_str_find(const my_str_t* str, const my_str_t* tofind, size_t from){
             j = 0;
         }
     }
-    return -1u;
+    return (size_t) -1u;
 }
 
-//! Знайти перший символ в стрічці, повернути його номер
-//! або -1u, якщо не знайдено. from -- місце, з якого починати шукати.
-//! Якщо більше за розмір -- вважати, що не знайдено.
+
+// find the 1st occurrence of a char | return it's index if found -- else return -1u
 size_t my_str_find_c(const my_str_t* str, char tofind, size_t from){
     for (size_t i = from; i < str->size_m; i++){
         if (my_str_getc(str, i) == tofind){
             return i;
         }
     }
-    return -1u;
+    return (size_t) -1u;
 }
 
-//! Знайти символ в стрічці, для якого передана
-//! функція повернула true, повернути його номер
-//! або -1u, якщо не знайдено:
+// find thw 1st occurrence of a char : predicat(char) returns true | return index of the char if found else -1u
 size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
     char c;
     for (size_t i = 0; i < str->size_m; i++){
-        c = my_str_getc(str, i);
+        c = str->data[i];
         if (predicat(c)){
-            return c;
+            return i;
         }
     }
-    return -1u;
+    return (size_t ) -1u;
 }
 
 //TODO
@@ -344,16 +315,26 @@ size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
 //! якщо сталися помилки. Кінець вводу -- не помилка, однак,
 //! слід не давати читанню вийти за межі буфера!
 //! Рекомендую скористатися fgets().
+//
+////! Аналог my_str_read_file, із stdin
+//int my_str_read(my_str_t* str){
+//    return my_str_read_file(str, stdin);
+//}
+
+
+
+
 int my_str_read_file(my_str_t* str, FILE* file){
-   if (file != NULL){
-       if (fgets(str->data, (int)str->capacity_m, file) != NULL){
-            return 0;
-       }
-   }
-    return -1;
+    if (file == NULL) {
+        return -1;
+    } else {
+        fgets(str->data, (int) str->capacity_m, file);
+        return 0;
+    }
 }
 
-//! Аналог my_str_read_file, із stdin
-int my_str_read(my_str_t* str){
-    return my_str_read_file(str, stdin);
-}
+
+
+
+
+
