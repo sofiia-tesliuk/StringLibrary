@@ -310,12 +310,24 @@ size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
     return (size_t ) -1u;
 }
 
-//TODO
-//! Прочитати стрічку із файлу. Повернути, 0, якщо успішно, -1,
-//! якщо сталися помилки. Кінець вводу -- не помилка, однак,
-//! слід не давати читанню вийти за межі буфера!
-//! Рекомендую скористатися fgets().
-//
+
+// read file into my_str | return 0 if OK -- else (-1) if in case of buffer overflow or wrong path to the file
+int my_str_read_file(my_str_t* str, FILE* file){
+    if (file != NULL) {
+        fgets(str->data, str->capacity_m, file);
+        fclose(file);
+
+        size_t i = 0;
+        while (str->data[i] != '\0'){
+            i++;
+        }
+        str->data[i] = '\0';
+        return 0;
+    } else { return -1; }
+}
+
+
+// TODO
 ////! Аналог my_str_read_file, із stdin
 //int my_str_read(my_str_t* str){
 //    return my_str_read_file(str, stdin);
@@ -323,14 +335,6 @@ size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
 
 
 
-// read file into my_str | return 0 if OK -- else (-1) if wrong path to the file or in case of buffer overflow
-int my_str_read_file(my_str_t* str, FILE* file){
-    if (file != NULL) {
-        fgets(str->data, str->capacity_m, file);
-        fclose(file);
-        return 0;
-    } else { return -1; }
-}
 
 
 
