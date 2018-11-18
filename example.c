@@ -96,16 +96,9 @@ int main(int argc, char* argv[]){
     printf("\nRead file: my_str_read_file: %d\n", my_str_read_file(&str_3, fp));
     printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_3.data, str_3.size_m, str_3.capacity_m);
 
-//    my_str_clear(&str_3);
-//    printf("\nRead file: my_str_read stdin: %d\n", my_str_read(&str_3));
-//    printf("Result:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_3.data, str_3.size_m, str_3.capacity_m);
+    my_str_create(&str_3, 10);
+    printf("\nRead stdin: my_str_read stdin: %d\n", my_str_read(&str_3));
+    printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_3.data, str_3.size_m, str_3.capacity_m);
 
     return 0;
 }
-
-
-//        perror("Error: ");
-//char cwd[PATH_MAX];
-//if (getcwd(cwd, sizeof(cwd)) != NULL) {
-//printf("Current working dir: %s\n", cwd);
-//}

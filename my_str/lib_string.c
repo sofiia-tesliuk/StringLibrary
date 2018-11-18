@@ -330,7 +330,17 @@ int my_str_read_file(my_str_t* str, FILE* file){
 
 // read stdin into my_str | return 0 if OK
 int my_str_read(my_str_t* str){
-    my_str_read_file(str, stdin);
+    fgets(str->data, str->capacity_m, stdin);
+    size_t i = 0;
+    while (str->data[i] != '\0') {
+        printf("%c", str->data[i]);
+        i++;
+    }
+    if (i <= str->capacity_m){
+        i--;
+    }
+    str->data[i] = '\0';
+    str->size_m = i;
     return 0;
 }
 
