@@ -15,6 +15,10 @@ errno.h
 -
 string.h
 -
+limits.h
+-
+unistd.h
+-
 
 /home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h
 stdio.h

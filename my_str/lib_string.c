@@ -311,7 +311,7 @@ size_t my_str_find_if(const my_str_t* str, int (*predicat)(char)){
 }
 
 
-// read file into my_str | return 0 if OK -- else (-1) if in case of buffer overflow or wrong path to the file
+// read file into my_str | return 0 if OK -- else (-1) if in case of given wrong path to the file
 int my_str_read_file(my_str_t* str, FILE* file){
     if (file != NULL) {
         fgets(str->data, str->capacity_m, file);
@@ -328,11 +328,11 @@ int my_str_read_file(my_str_t* str, FILE* file){
 }
 
 
-// TODO
-////! Аналог my_str_read_file, із stdin
-//int my_str_read(my_str_t* str){
-//    return my_str_read_file(str, stdin);
-//}
+// read stdin into my_str | return 0 if OK
+int my_str_read(my_str_t* str){
+    my_str_read_file(str, stdin);
+    return 0;
+}
 
 
 
