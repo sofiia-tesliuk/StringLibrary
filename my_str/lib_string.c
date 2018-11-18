@@ -61,7 +61,7 @@ int my_str_from_cstr(my_str_t* str, const char* cstr, size_t buf_size){
 
 
 // get size
-size_t my_str_get_len(const my_str_t* str){
+size_t my_str_size(const my_str_t *str){
     return str->size_m;
 }
 
@@ -119,7 +119,7 @@ int my_str_popback(my_str_t* str){
 // copy my_str | if reserve == true and 'from' fits into 'to', to-capacity is kept -- else adjusted.
 int my_str_copy(const my_str_t* from,  my_str_t* to, int reserve){
     if ((!reserve) || (from->size_m > to->capacity_m)) {
-        to->capacity_m = my_str_get_len(from) + 1;
+        to->capacity_m = my_str_size(from) + 1;
     }
     if (to->data){
         my_str_clear(to);
@@ -321,6 +321,7 @@ int my_str_read_file(my_str_t* str, FILE* file){
         while (str->data[i] != '\0'){
             i++;
         }
+        str->size_m = i;
         str->data[i] = '\0';
         return 0;
     } else { return -1; }

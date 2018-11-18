@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
+#include <limits.h>
+#include <unistd.h>
 
 int lambda(char c){
     return c > 'k';
@@ -10,8 +12,8 @@ int lambda(char c){
 int main(int argc, char* argv[]){
     // C-string example
     char example_str[] = {'k', 'i', 't',  't',  'y', '\0'};
-    my_str_t str_1;
-    my_str_create(&str_1, 100);
+    my_str_t str_1, str_3;
+    my_str_create(&str_1, 10);
 //    my_str_from_cstr(&str_1, example_str, 30);
 //    printf("Example: %s\n\n", str_1.data);
 //    printf("my_str_size: %zu\n\n", my_str_size(&str_1));
@@ -74,20 +76,34 @@ int main(int argc, char* argv[]){
 //    printf("Find:\n\tstr: %s\n\tsub_str: %s\n\tfrom: %d\n\tmy_str_find: %zu\n\n", str_1.data, str_2.data, 0, my_str_find(&str_1, &str_2, 0));
 //    printf("Find:\n\tstr: %s\n\tchar: %c\n\tfrom: %d\n\tmy_str_find: %zu\n\n", str_1.data, 't', 0, my_str_find_c(&str_1, 't', 0));
 //
-//    printf("Find:\n\tstr: %s\n\tpredicat: if char > 'k'\n\tmy_str_find_if: %c\n\n", str_1.data, my_str_find_if(&str_1, &lambda));
+////    printf("Find:\n\tstr: %s\n\tpredicat: if char > 'k'\n\tmy_str_find_if: %c\n\n", str_1.data, my_str_find_if(&str_1, &lambda));
 //
 //    printf("Before:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\tmy_str_free\n", str_2.data, str_2.size_m, str_2.capacity_m);
 //    my_str_free(&str_2);
 //    printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_2.data, str_2.size_m, str_2.capacity_m);
+//
+//    printf("Before:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\tmy_str_free\n", str_2.data, str_2.size_m, str_2.capacity_m);
+
+    my_str_create(&str_3, 75);
+    char buff[PATH_MAX];
+    char *fname = realpath("../in_file.txt", buff);
 
     FILE *fp;
-    fp = fopen("/home/anastasiia/CLionProjects/StringLibrary/in_file.txt", "r");
+    if (fname == NULL){
+        perror("Error: ");
+    }
+    fp = fopen(fname, "r");
+    printf("\nRead file: my_str_read_file: %d\n", my_str_read_file(&str_3, fp));
+    printf("Result:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_3.data, str_3.size_m, str_3.capacity_m);
 
-    printf("\n\nRead file: example. my_str_read_file: %d\n", my_str_read_file(&str_1, fp));
-    printf("%s\n", str_1.data);
-    printf("%d\n", (int) str_1.capacity_m);
+
     return 0;
 }
 
 
 //        perror("Error: ");
+//"/home/anastasiia/CLionProjects/StringLibrary/in_file.txt"
+//char cwd[PATH_MAX];
+//if (getcwd(cwd, sizeof(cwd)) != NULL) {
+//printf("Current working dir: %s\n", cwd);
+//}
