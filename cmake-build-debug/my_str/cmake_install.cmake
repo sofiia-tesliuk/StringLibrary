@@ -1,4 +1,4 @@
-# Install script for directory: /home/anastasiia/CLionProjects/StringLibrary/my_str
+# Install script for directory: /home/anastasiia/StringLibrary/my_str
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

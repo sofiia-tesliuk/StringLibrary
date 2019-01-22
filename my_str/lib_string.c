@@ -1,6 +1,7 @@
 /*
  * lib_string.c
  */
+#include <ctype.h>
 #include "lib_string.h"
 
 
@@ -345,10 +346,32 @@ int my_str_read(my_str_t* str){
 }
 
 
+int my_str_all_alpha(my_str_t* str, my_str_t* res_str){
+    if (res_str->capacity_m >= str->capacity_m){
+        for (size_t i = 0; i < str->size_m; i++){
+            if (isalpha(str->data[i]) || str->data[i] == ' '){
+                my_str_pushback(res_str, str->data[i]);
+            }
+        }
+        return 0;
+    } else return -1;
+}
 
 
+int my_str_fix_spaces(my_str_t* str, my_str_t* res_str){
+    if (res_str->capacity_m >= str->capacity_m){
+        size_t count = 0;
+        for (size_t i = 0; i < str->size_m; i++){
+            if (str->data[i] == ' '){
+                count++;
+            } else{
+                count = 0;
+            }
 
-
-
-
-
+            if (count <= 1){
+                my_str_pushback(res_str, str->data[i]);
+            }
+        }
+        return 0;
+    } else return -1;
+}

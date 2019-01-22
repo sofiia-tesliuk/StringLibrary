@@ -68,4 +68,8 @@ int my_str_read_file(my_str_t* str, FILE* file);
 
 int my_str_read(my_str_t* str);
 
+int my_str_all_alpha(my_str_t* str, my_str_t* res_str);
+
+int my_str_fix_spaces(my_str_t* str, my_str_t* res_str);
+
 #endif //LIB_STRING_H

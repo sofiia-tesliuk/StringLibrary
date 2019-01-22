@@ -1,4 +1,4 @@
-/home/anastasiia/Documents/clion-2018.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/anastasiia/CLionProjects/StringLibrary
+/home/anastasiia/Documents/clion-2018.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/anastasiia/StringLibrary
 -- The C compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
 -- Check for working C compiler: /usr/bin/cc -- works
@@ -8,4 +8,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug
+-- Build files have been written to: /home/anastasiia/StringLibrary/cmake-build-debug

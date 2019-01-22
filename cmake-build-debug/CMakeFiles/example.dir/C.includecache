@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/anastasiia/CLionProjects/StringLibrary/example.c
+/home/anastasiia/StringLibrary/example.c
 my_str/lib_string.h
-/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h
+/home/anastasiia/StringLibrary/my_str/lib_string.h
 stdio.h
 -
 errno.h
@@ -20,7 +20,7 @@ limits.h
 unistd.h
 -
 
-/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h
+/home/anastasiia/StringLibrary/my_str/lib_string.h
 stdio.h
 -
 stdlib.h

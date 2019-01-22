@@ -48,10 +48,10 @@ RM = /home/anastasiia/Documents/clion-2018.2.4/bin/cmake/linux/bin/cmake -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/anastasiia/CLionProjects/StringLibrary
+CMAKE_SOURCE_DIR = /home/anastasiia/StringLibrary
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug
+CMAKE_BINARY_DIR = /home/anastasiia/StringLibrary/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/CMakeFiles/progress.marks
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles 0
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles /home/anastasiia/StringLibrary/cmake-build-debug/my_str/CMakeFiles/progress.marks
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/clean
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/preinstall
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/preinstall
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 my_str/CMakeFiles/lib_string-shared.dir/rule:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/CMakeFiles/lib_string-shared.dir/rule
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/CMakeFiles/lib_string-shared.dir/rule
 .PHONY : my_str/CMakeFiles/lib_string-shared.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ lib_string-shared: my_str/CMakeFiles/lib_string-shared.dir/rule
 
 # fast build rule for target.
 lib_string-shared/fast:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/build
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/build
 .PHONY : lib_string-shared/fast
 
 # Convenience name for target.
 my_str/CMakeFiles/lib_string.dir/rule:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/CMakeFiles/lib_string.dir/rule
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 my_str/CMakeFiles/lib_string.dir/rule
 .PHONY : my_str/CMakeFiles/lib_string.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ lib_string: my_str/CMakeFiles/lib_string.dir/rule
 
 # fast build rule for target.
 lib_string/fast:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/build
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/build
 .PHONY : lib_string/fast
 
 lib_string.o: lib_string.c.o
@@ -146,8 +146,8 @@ lib_string.o: lib_string.c.o
 
 # target to build an object file
 lib_string.c.o:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.o
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.o
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.o
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.o
 .PHONY : lib_string.c.o
 
 lib_string.i: lib_string.c.i
@@ -156,8 +156,8 @@ lib_string.i: lib_string.c.i
 
 # target to preprocess a source file
 lib_string.c.i:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.i
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.i
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.i
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.i
 .PHONY : lib_string.c.i
 
 lib_string.s: lib_string.c.s
@@ -166,8 +166,8 @@ lib_string.s: lib_string.c.s
 
 # target to generate assembly for a file
 lib_string.c.s:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.s
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.s
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string-shared.dir/build.make my_str/CMakeFiles/lib_string-shared.dir/lib_string.c.s
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(MAKE) -f my_str/CMakeFiles/lib_string.dir/build.make my_str/CMakeFiles/lib_string.dir/lib_string.c.s
 .PHONY : lib_string.c.s
 
 # Help Target
@@ -194,6 +194,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/anastasiia/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

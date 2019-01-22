@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.c
+/home/anastasiia/StringLibrary/my_str/lib_string.c
+ctype.h
+-
 lib_string.h
-/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h
+/home/anastasiia/StringLibrary/my_str/lib_string.h
 
-/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h
+/home/anastasiia/StringLibrary/my_str/lib_string.h
 stdio.h
 -
 stdlib.h

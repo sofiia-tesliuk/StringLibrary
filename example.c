@@ -12,7 +12,7 @@ int lambda(char c){
 int main(int argc, char* argv[]){
     // C-string example
     char example_str[] = {'k', 'i', 't',  't',  'y', '\0'};
-    my_str_t str_1, str_3;
+    my_str_t str_1, str_3, str_4;
     my_str_create(&str_1, 10);
     my_str_from_cstr(&str_1, example_str, 30);
     printf("Example: %s\n\n", str_1.data);
@@ -86,13 +86,13 @@ int main(int argc, char* argv[]){
 
 
     my_str_create(&str_3, 75);
-    char buff[PATH_MAX];
-    char *fname = realpath("../in_file.txt", buff);
-    FILE *fp;
-    if (fname == NULL){
-        perror("Error: ");
-    }
-    fp = fopen(fname, "r");
+    my_str_create(&str_4, 75);
+
+
+    my_str_read(&str_3);
+    my_str_get_cstr(&str_3);
+
+    FILE *fp = fopen(my_str_get_cstr(&str_3), "r");
     printf("\nRead file: my_str_read_file: %d\n", my_str_read_file(&str_3, fp));
     printf("After:\n\tstr: %s\n\tstr.size_m: %zu\n\tstr.capacity: %zu\n\n", str_3.data, str_3.size_m, str_3.capacity_m);
 

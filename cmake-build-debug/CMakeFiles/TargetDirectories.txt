@@ -1,8 +1,8 @@
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/task_2.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/example.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/CMakeFiles/edit_cache.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/CMakeFiles/rebuild_cache.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/CMakeFiles/lib_string-shared.dir
-/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/CMakeFiles/lib_string.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles/task_2.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/CMakeFiles/example.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/my_str/CMakeFiles/edit_cache.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/my_str/CMakeFiles/rebuild_cache.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/my_str/CMakeFiles/lib_string-shared.dir
+/home/anastasiia/StringLibrary/cmake-build-debug/my_str/CMakeFiles/lib_string.dir

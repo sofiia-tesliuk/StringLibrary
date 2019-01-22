@@ -8,33 +8,33 @@
 		<Option virtualFolders="CMake Files\;CMake Files\my_str\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="task_2">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/task_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/task_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/anastasiia/CLionProjects/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
+					<Add directory="/home/anastasiia/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -42,20 +42,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 task_2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 task_2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="task_2/fast">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/task_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/task_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/anastasiia/CLionProjects/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
+					<Add directory="/home/anastasiia/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -63,30 +63,30 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 task_2/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 task_2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="example">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/example" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/anastasiia/CLionProjects/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
+					<Add directory="/home/anastasiia/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -94,20 +94,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 example"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 example"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="example/fast">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/example" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/anastasiia/CLionProjects/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
+					<Add directory="/home/anastasiia/StringLibrary/$(MY_STR_INCLUDE_DIR)"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -115,15 +115,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 example/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 example/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib_string-shared">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/liblib_string.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/my_str/liblib_string.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug/my_str"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
@@ -135,15 +135,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string-shared"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string-shared"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib_string-shared/fast">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/liblib_string.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/my_str/liblib_string.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug/my_str"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
@@ -155,15 +155,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string-shared/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string-shared/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib_string">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/liblib_string.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/my_str/liblib_string.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug/my_str"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -175,15 +175,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lib_string/fast">
-				<Option output="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/liblib_string.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str"/>
+				<Option output="/home/anastasiia/StringLibrary/cmake-build-debug/my_str/liblib_string.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/anastasiia/StringLibrary/cmake-build-debug/my_str"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -195,31 +195,31 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/CLionProjects/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 lib_string/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/anastasiia/StringLibrary/cmake-build-debug/my_str/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/example.c">
+		<Unit filename="/home/anastasiia/StringLibrary/example.c">
 			<Option target="example"/>
 		</Unit>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.c">
+		<Unit filename="/home/anastasiia/StringLibrary/my_str/lib_string.c">
 			<Option target="lib_string-shared"/>
 			<Option target="lib_string"/>
 		</Unit>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/my_str/lib_string.h">
+		<Unit filename="/home/anastasiia/StringLibrary/my_str/lib_string.h">
 			<Option target="lib_string-shared"/>
 			<Option target="lib_string"/>
 		</Unit>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/task_2.c">
+		<Unit filename="/home/anastasiia/StringLibrary/task_2.c">
 			<Option target="task_2"/>
 		</Unit>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/CMakeLists.txt">
+		<Unit filename="/home/anastasiia/StringLibrary/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/anastasiia/CLionProjects/StringLibrary/my_str/CMakeLists.txt">
+		<Unit filename="/home/anastasiia/StringLibrary/my_str/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\my_str\"/>
 		</Unit>
 	</Project>

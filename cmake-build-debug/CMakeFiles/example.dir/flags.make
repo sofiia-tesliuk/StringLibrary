@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/anastasiia/CLionProjects/StringLibrary/$(MY_STR_INCLUDE_DIR) 
+C_INCLUDES = -I/home/anastasiia/StringLibrary/$(MY_STR_INCLUDE_DIR) 
 
